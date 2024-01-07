@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v8</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        color: wheat;
+    }
+</style>
+<body>
+    <!-- 0 UNSENT: Client has been created. open() not called yet. <br>
+    1 OPENED: open() has been called. <br>
+    2 HEADERS_RECEIVED: send() has been called, and headers and status are available. <br>
+    3 LOADING: Downloading; responseText holds partial data. <br>
+    4 DONE :The operation is complete. -->
+
+    <div id="img">
+        <!-- <img src="https://avatars.githubusercontent.com/u/11613311?v=4" alt=""> -->
+    </div>
+    <button id="btn">click here</button>
+
+</body>
+<script>
+    
+        // xhr.open('GET', url)
+        // xhr.onreadystatechange = function () {
+        //     console.log(xhr.readyState)
+        //     if (xhr.readyState === 4) {
+        //         const data = JSON.parse(this.responseText)
+        //         console.log(typeof data)
+        //         console.log(data.followers)
+        //         console.log(data)
+        //     }
+        // }
+        // xhr.send()
+
+    const url = 'https://api.github.com/users/hiteshchoudhary'
+
+    const xhr = new XMLHttpRequest
+
+    xhr.open('GET',url)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState)
+        if (xhr.readyState === 4) {
+            let r = JSON.parse(this.responseText)
+            console.log(r.followers)
+            console.log(r.name)
+            console.log(r)
+        }
+    }
+
+    xhr.send()
+
+    // document.querySelector('#btn').addEventListener('click',function (e) {
+    // document.createElement('img')
+    // img.innerHTML='<img src="https://avatars.githubusercontent.com/u/11613311?v=4" alt="hitesh"> <br> followers = 11056'
+    // })
+
+</script>
+
+</html>

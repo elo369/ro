@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+
+<body>
+    <h1>Code aur code</h1>
+    <button id="stop">stop</button>
+</body>
+<script>
+   const name=function () {
+    console.log("rohit")
+   }
+
+   const text= function () {
+    document.querySelector('h1').innerHTML="rohit is best"
+   }
+
+  let stop= setTimeout(text,2000)
+
+
+ let ro=  document.querySelector('#stop')
+ ro.addEventListener('click',function () {
+    clearTimeout(stop)
+    console.log("stopped")
+
+ })
+
+
+</script>
+
+</html>

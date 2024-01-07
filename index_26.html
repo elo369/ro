@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>photos</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 1000px;
+        }
+        img{
+            width: 110px;
+        }
+    </style>
+</head>
+<body>
+    <h2>photos</h2>
+    <div>
+        <ul id="images">
+             <li id="ro"><img src="img/ro.jpg" alt=""></li>
+            <li id="football"><img src="img/football.jpeg" alt=""></li>
+            <li id="hockey"><img src="img/hockey.jpeg" alt=""></li>
+            <li id="man"><img src="img/man.webp" alt=""></li>
+            <li id="brave"><img src="img/brave.webp" alt=""></li>
+            <button> <a href="http://google.com" id="google">google</a></button>
+        </ul>
+    </div>
+</body>
+<script>
+    console.log("addeventslistener")
+// document.getElementById('ro').onclick=function name(params) {                    //not better than click event
+//     alert('ro hai')
+// }
+
+//attachEvent ()
+//Jquery-on
+
+//type,timestamp,defaultPrevented
+//target,toElement,srcElement,currentTarget
+//clientX,clientY,screenX,screenY
+//altkey,ctrlkey,shiftkey,keyCode
+
+// document.getElementById('images').addEventListener('click',function (e) {
+//     // alert('lonelyness')
+//     console.log(" inside in ul")  
+// },false)
+
+
+// document.getElementById('man').addEventListener('click',function (e) {
+//     // alert('lonelyness')
+//     console.log("man")
+//     // e.stopPropagation()                                                      // stop bubbling
+// },false)
+//false=bubbling
+//true=clipblet
+
+document.getElementById('google').addEventListener('click',function (e) {
+    e.preventDefault()
+    e.stopPropagation()
+    console.log('google')
+},false)
+
+// document.querySelector('#images').addEventListener('click',function (e) {
+//     console.log(e.target.tagName)
+//     if (e.target.tagName === 'IMG') {
+//         console.log(e.target.id)
+//        let remove= e.target.parentNode
+//        remove.remove()
+//     }
+// })
+
+document.querySelector('#images').addEventListener('click',function (e) {
+    console.log(e.target.tagName)
+    if (e.target.tagName === 'IMG') {
+        console.log(e.target.parentNode.id)
+        let A = e.target.parentNode
+        A.remove()
+    }
+})
+
+</script>
+</html>

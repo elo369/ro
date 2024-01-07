@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .heart::before {
+      left: 0;
+      transform-origin: 0 100%;
+    }
+    
+    .heart::after {
+      left: 48px;
+      transform-origin: 100% 100%;
+    } 
+
+    .heart::before{
+      content: '\2764';
+      color: red;
+      font-size: 500px;
+      margin-left: 500px;
+      display: block;
+    }
+    .heart{
+      animation: beat 1.5s infinite alternate-reverse;
+
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart"></div>
+</body>
+</html>

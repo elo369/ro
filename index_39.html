@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<style>
+    #oran{
+        background-color: skyblue;
+    }
+</style>
+<body>
+    <button id="orange">orange</button>
+    <button id="purple">purple</button>
+</body>
+<script>
+//  function A() {
+//     let sun = "hitesh";
+//     console.log(star)
+//     function B() {
+//         console.log(sun)
+//         console.log(star)
+//     }
+
+//     function C() {
+//         let star = "star"
+//     }
+//     B()
+//     C()
+//  }
+//  A()
+</script>
+<script>
+    // document.querySelector("#orange").onclick=function(){
+    //     document.body.style.background="orange"
+    // }
+    // document.querySelector("#purple").onclick=function(){
+    //     document.body.style.background="purple"
+    // }
+
+    function A(color) {
+        return function () {
+            
+            document.body.style.background = `${color}`
+        }
+    }
+    document.querySelector('#orange').onclick = A('orange')
+    document.querySelector('#purple').onclick = A('purple')
+</script>
+</html>
